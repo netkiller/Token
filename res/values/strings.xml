@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HXToken</string>
+    <string name="app_name">Token</string>
     <string name="hello_world">Hello world!</string>
 
     <!-- Accessibility description sent when user starts drawing a lock pattern. -->
@@ -29,5 +29,8 @@
     <string name="determine">确定</string>
    <string name="letter">设置四个字母</string>
    <string name="re_setting">重新设置</string>
+   <string name="already_copy">已复制到粘贴板</string>
+   <string name="copy">复制到粘贴板</string>
+   <string name="dialog_title">请设置刷新的分钟数</string>
 
 </resources>

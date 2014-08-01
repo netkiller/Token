@@ -48,7 +48,7 @@ public class VerifyLockPatternActivity extends Activity implements OnPatternList
 		if(savedData != null && savedData.equals(data)) {
 			//解锁成功
 			Intent intent = new Intent(VerifyLockPatternActivity.this,
-					SecActivity.class);
+					SelectEnvActivity.class);
 			startActivity(intent);
 			finish();
 		} else {//解锁失败

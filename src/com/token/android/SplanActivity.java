@@ -44,8 +44,7 @@ public class SplanActivity extends Activity {
 	private void gotoMain() {
 		Intent intent = null;
 		String savedData = LockPatternUtils.loadFromPreferences(this);
-		String a=PreferencesUtils.getString(this, "a");
-		if (savedData == null || a==null) {
+		if (savedData == null) {
 			intent = new Intent(this, SetLockPatternActivity.class);
 			startActivity(intent);
 		} else {

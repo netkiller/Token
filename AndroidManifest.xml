@@ -41,6 +41,7 @@
             android:name="SetLockPatternActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        <activity android:name="SelectEnvActivity"></activity>
     </application>
 
 </manifest>

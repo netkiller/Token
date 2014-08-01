@@ -17,6 +17,11 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
+    <style name="CommonDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/smssdk_dialog_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
     <style name="NumberProgressBar_Default">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>

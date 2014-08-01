@@ -8,7 +8,8 @@ import android.content.Context;
 
 public class DateUtil {
 
-	public static String getDate(Context context) {
+	public static String getDate(Context context, String param1, String param2,
+			String param3, String param4) {
 		SimpleDateFormat yyyy = new SimpleDateFormat("yyyy");
 		SimpleDateFormat MM = new SimpleDateFormat("MM");
 		SimpleDateFormat dd = new SimpleDateFormat("dd");
@@ -21,20 +22,20 @@ public class DateUtil {
 		HH.setTimeZone(TimeZone.getTimeZone("UTC"));
 		mm.setTimeZone(TimeZone.getTimeZone("UTC"));
 
-		return yyyy.format(new Date())
-				+ PreferencesUtils.getString(context, "a")
-				+ MM.format(new Date())
-				+ PreferencesUtils.getString(context, "b")
-				+ dd.format(new Date())
-				+ PreferencesUtils.getString(context, "c")
-				+ HH.format(new Date())
-				+ PreferencesUtils.getString(context, "d")
-				+ mm.format(new Date());
+		return yyyy.format(new Date()) + param1 + MM.format(new Date())
+				+ param2 + dd.format(new Date()) + param3
+				+ HH.format(new Date()) + param4 + mm.format(new Date());
 
 	}
 
 	public static int getSS() {
 		SimpleDateFormat sdf = new SimpleDateFormat("ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		return Integer.parseInt(sdf.format(new Date()));
+	}
+
+	public static int getMM() {
+		SimpleDateFormat sdf = new SimpleDateFormat("mm");
 		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
 		return Integer.parseInt(sdf.format(new Date()));
 	}

@@ -1,6 +1,7 @@
 package com.token.android.lockpattern;
 
 import com.token.android.R;
+import com.token.android.SelectEnvActivity;
 import com.token.android.SetLockPatternActivity;
 import com.token.android.SettingActivity;
 
@@ -91,7 +92,7 @@ public class SetLockPatternView {
 			//
 			LockPatternUtils.saveToPreferences(mActivity,
 					SetLockPatternActivity.mModel.getLockPattern());
-			Intent intent = new Intent(mActivity, SettingActivity.class);
+			Intent intent = new Intent(mActivity, SelectEnvActivity.class);
 			mActivity.startActivity(intent);
 			mActivity.finish();
 			break;

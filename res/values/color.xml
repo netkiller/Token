@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="dialog_btn_nor">#00000000</drawable>
+    <drawable name="dialog_btn_pre">#ff282a2b</drawable>
+
+</resources>

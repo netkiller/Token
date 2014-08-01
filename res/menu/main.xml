@@ -2,9 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/re_setting"
+        android:id="@+id/action_copy"
+        android:icon="@drawable/abc_ic_menu_moreoverflow_normal_holo_light"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
-        android:title="@string/re_setting"/>
+        android:title="copy">
+        <item
+            android:id="@+id/re_setting"
+            android:orderInCategory="100"
+            android:title="@string/re_setting"/>
+        <item
+            android:id="@+id/copy"
+            android:orderInCategory="100"
+            android:title="@string/copy"/>
+        <item
+            android:id="@+id/setting_time"
+            android:orderInCategory="100"
+            android:title="设置刷新时间"/>
+    </item>
 
 </menu>
