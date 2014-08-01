@@ -55,7 +55,6 @@ public class SecActivity extends Activity {
 					public void run() {
 						bnp.incrementProgressBy(1);
 						counter++;
-						System.out.println(DateUtil.getSS());
 						if (counter == mMaxProgress) {
 							bnp.setProgress(0);
 							updateSec();
@@ -192,8 +191,18 @@ public class SecActivity extends Activity {
 			param4 = PreferencesUtils.getString(this, "pr4");
 		}
 
+		int re_time = 1;
+		if (env == Env.Dev) {
+			re_time = PreferencesUtils.getInt(SecActivity.this, "dev_time", 1);
+		} else if (env == Env.Test) {
+			re_time = PreferencesUtils.getInt(SecActivity.this, "test_time", 1);
+		} else if (env == Env.Produce) {
+			re_time = PreferencesUtils.getInt(SecActivity.this, "produce_time",
+					1);
+		}
+
 		String md5 = MD5Util.MD5(
-				DateUtil.getDate(this, param1, param2, param3, param4) + "\n")
+				DateUtil.getDate(this, param1, param2, param3, param4,re_time) + "\n")
 				.substring(1, 9)
 				+ "\n";
 		String base64code = new String(Base64.encode(md5.getBytes(), 0))
@@ -218,7 +227,6 @@ public class SecActivity extends Activity {
 		// counter=(DateUtil.getMM()*60+DateUtil.getSS())*10%mMaxTime;
 		counter = (DateUtil.getMM() * 60 + DateUtil.getSS())
 				% (refreshTime * 60) * 10;
-		System.out.println("counter:" + counter);
 		bnp.setProgress(counter);
 
 	}

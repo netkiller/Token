@@ -9,7 +9,7 @@ import android.content.Context;
 public class DateUtil {
 
 	public static String getDate(Context context, String param1, String param2,
-			String param3, String param4) {
+			String param3, String param4, int reTime) {
 		SimpleDateFormat yyyy = new SimpleDateFormat("yyyy");
 		SimpleDateFormat MM = new SimpleDateFormat("MM");
 		SimpleDateFormat dd = new SimpleDateFormat("dd");
@@ -22,9 +22,16 @@ public class DateUtil {
 		HH.setTimeZone(TimeZone.getTimeZone("UTC"));
 		mm.setTimeZone(TimeZone.getTimeZone("UTC"));
 
-		return yyyy.format(new Date()) + param1 + MM.format(new Date())
-				+ param2 + dd.format(new Date()) + param3
-				+ HH.format(new Date()) + param4 + mm.format(new Date());
+		return yyyy.format(new Date())
+				+ param1
+				+ MM.format(new Date())
+				+ param2
+				+ dd.format(new Date())
+				+ param3
+				+ HH.format(new Date())
+				+ param4
+				+ (Integer.parseInt(mm.format(new Date())) - (Integer
+						.parseInt(mm.format(new Date())) % reTime));
 
 	}
 
